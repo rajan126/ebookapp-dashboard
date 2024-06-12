@@ -1,3 +1,5 @@
+import { ThemeProvider } from '@/components/theme-provider';
+import { ModeToggle } from '@/components/toggle';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -45,7 +47,7 @@ const DashboardLayout = () => {
                     <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
                         <Link to="/" className="flex items-center gap-2 font-semibold">
                             <Package2 className="h-6 w-6" />
-                            <span className="">Coder's Book</span>
+                            <span className="">Bookbeam's</span>
                         </Link>
                         <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
                             <Bell className="h-4 w-4" />
@@ -176,6 +178,9 @@ const DashboardLayout = () => {
                             </div>
                         </form>
                     </div>
+                    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+            <ModeToggle />
+          </ThemeProvider>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="secondary" size="icon" className="rounded-full">
